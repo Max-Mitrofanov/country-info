@@ -16,13 +16,19 @@ const showCountry = () => {
   request.addEventListener(`load`, () => {
     id += 1;
     const [data] = JSON.parse(request.responseText);
+    console.log(data);
     const [lang] = Object.values(data.languages);
     const [currency] = Object.values(data.currencies);
+    const country = !data.altSpellings[1]
+      ? input.value.slice(0, 1).toUpperCase() +
+        input.value.slice(1).toLowerCase()
+      : data.altSpellings[1];
+    console.log(typeof input.value);
     const html = `<article class="country" id="${id}">
     <button class="card__button" data-id="${id}">Clear</button>
   <img class="country__img" src="${data.flags.svg}" />
   <div class="country__data">
-    <h3 class="country__name">${data.altSpellings[1]}</h3>
+    <h3 class="country__name">${country}</h3>
     <h4 class="country__region">${data.region}</h4>
     <p class="country__row"><span>👫</span>${(
       +data.population / 1000000
@@ -40,7 +46,6 @@ const showCountry = () => {
       });
     });
     input.value = ``;
-    console.log(html);
   });
 };
 button.addEventListener(`click`, showCountry);
