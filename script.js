@@ -56,10 +56,7 @@ input.addEventListener(`keydown`, e => {
     showCountry();
   }
 });
-// button.addEventListener(`click`, () => {
-//   getCountryData(`${input.value}`);
-//   input.value = ``;
-// });
+
 buttonClear.addEventListener(`click`, () => {
   countriesContainer.innerHTML = ``;
   id = 0;
