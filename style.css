@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 html {
@@ -29,7 +29,7 @@ body {
 .countries {
   /* margin-bottom: 8rem; */
   display: flex;
-
+  margin-top: 15px;
   font-size: 2rem;
   opacity: 0;
   transition: opacity 1s;
@@ -74,6 +74,7 @@ body {
   background-color: #eee;
   border-top-left-radius: 0.7rem;
   border-top-right-radius: 0.7rem;
+  box-shadow: 0 -5px 15px 1px rgba(0, 0, 0, 0.1);
 }
 
 .country__data {
@@ -137,4 +138,64 @@ body {
 }
 .input__field {
   padding: 5px 20px;
+}
+.input__country .input__button {
+  display: block;
+  margin-bottom: 10px;
+  text-align: center;
+  width: 100%;
+  background: rgb(28, 111, 199);
+  border-style: none;
+  color: #fff;
+  border-radius: 20px;
+  padding: 10px;
+  font-size: 20px;
+}
+.input__country .input__field {
+  display: block;
+  border: 1px rgb(28, 111, 199) solid;
+  border-radius: 20px;
+  margin: 0;
+  margin-bottom: 10px;
+  text-align: center;
+  width: 30rem;
+  padding: 10px;
+  font-size: 20px;
+}
+.input__country .text {
+  display: block;
+  text-align: center;
+  margin: 10px;
+  font-size: 25px;
+  /* font-weight: */
+}
+.card__button {
+  background: rgb(28, 111, 199);
+  border-style: none;
+  color: #fff;
+  width: ;
+  padding: 10px 20px;
+  border-radius: 20px;
+  margin: 15px;
+}
+
+.card__button:hover {
+  background: #555;
+  color: #f7f7f7;
+}
+
+@media (max-width: 768px) {
+  /* .container {
+    flex-direction: column;
+    padding-top: 20px;
+    text-align: center;
+  } */
+  .countries {
+    display: block;
+    /* padding-bottom: 20px; */
+    text-align: center;
+  }
+  .countries .country {
+    margin-bottom: 40px;
+  }
 }

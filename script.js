@@ -8,7 +8,8 @@ const buttonClear = document.querySelector(`.clear`);
 
 ///////////////////////////////////////
 let id = 0;
-button.addEventListener(`click`, () => {
+
+const showCountry = () => {
   const request = new XMLHttpRequest();
   request.open(`GET`, `https://restcountries.com/v3.1/name/${input.value}`);
   request.send();
@@ -41,6 +42,13 @@ button.addEventListener(`click`, () => {
     input.value = ``;
     console.log(html);
   });
+};
+button.addEventListener(`click`, showCountry);
+input.addEventListener(`keydown`, e => {
+  if (e.key === `Enter`) {
+    input.blur();
+    showCountry();
+  }
 });
 // button.addEventListener(`click`, () => {
 //   getCountryData(`${input.value}`);
