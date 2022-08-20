@@ -30,6 +30,7 @@ const showCountry = () => {
   <div class="country__data">
     <h3 class="country__name">${country}</h3>
     <h4 class="country__region">${data.region}</h4>
+    <p class="country__row"><span>🏰</span>${data.capital}</p>
     <p class="country__row"><span>👫</span>${(
       +data.population / 1000000
     ).toFixed(1)} mln people</p>
